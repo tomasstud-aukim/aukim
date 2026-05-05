@@ -1,115 +1,114 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="light" lang="lt"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>aukim.lt | Vaikams, tėvams, seneliams - viskas šeimai</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
-.kaleidoscope-shape {
-filter: blur(60px);
-opacity: 0.15;
-position: absolute;
-z-index: -1;
-}
-.glass-card {
-background: rgba(255, 255, 255, 0.7);
-backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px);
-}
-</style>
+        .kaleidoscope-shape {
+            filter: blur(60px);
+            opacity: 0.15;
+            position: absolute;
+            z-index: -1;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
 <script id="tailwind-config">
-tailwind.config = {
-darkMode: "class",
-theme: {
-extend: {
-"colors": {
-"on-error-container": "#93000a",
-"surface": "#fbf9f1",
-"background": "#fbf9f1",
-"on-primary-fixed-variant": "#7a3009",
-"primary-fixed-dim": "#ffb597",
-"error-container": "#ffdad6",
-"inverse-on-surface": "#f3f1e9",
-"outline": "#88726a",
-"surface-container-low": "#f5f4ec",
-"inverse-primary": "#ffb597",
-"tertiary": "#006a63",
-"on-primary-fixed": "#360f00",
-"surface-variant": "#e4e3db",
-"on-secondary-fixed": "#241a00",
-"on-primary": "#ffffff",
-"tertiary-fixed": "#8ef4e9",
-"on-tertiary-fixed-variant": "#00504a",
-"primary-fixed": "#ffdbcd",
-"on-background": "#1b1c17",
-"outline-variant": "#dbc1b7",
-"on-primary-container": "#6c2600",
-"on-secondary-container": "#745c00",
-"surface-container-highest": "#e4e3db",
-"surface-dim": "#dcdad2",
-"surface-container-lowest": "#ffffff",
-"on-error": "#ffffff",
-"surface-container-high": "#eae8e0",
-"primary-container": "#f28c5f",
-"secondary-fixed": "#ffe088",
-"on-tertiary-container": "#00443f",
-"surface-tint": "#98461f",
-"on-secondary": "#ffffff",
-"secondary-container": "#fcd664",
-"on-surface-variant": "#55433b",
-"on-tertiary-fixed": "#00201d",
-"on-secondary-fixed-variant": "#574500",
-"tertiary-fixed-dim": "#71d7cd",
-"tertiary-container": "#4eb7ad",
-"on-surface": "#1b1c17",
-"surface-container": "#f0eee6",
-"surface-bright": "#fbf9f1",
-"inverse-surface": "#30312c",
-"secondary-fixed-dim": "#e7c353",
-"on-tertiary": "#ffffff",
-"error": "#ba1a1a",
-"primary": "#98461f",
-"secondary": "#735c00"
-},
-"borderRadius": {
-"DEFAULT": "1rem",
-"lg": "2rem",
-"xl": "3rem",
-"full": "9999px"
-},
-"spacing": {
-"margin-mobile": "16px",
-"stack-md": "24px",
-"stack-sm": "8px",
-"unit": "8px",
-"container-max": "1280px",
-"stack-lg": "48px",
-"gutter": "24px"
-},
-"fontFamily": {
-"body-lg": ["Plus Jakarta Sans"],
-"body-md": ["Plus Jakarta Sans"],
-"display-lg": ["Plus Jakarta Sans"],
-"headline-md": ["Plus Jakarta Sans"],
-"label-md": ["Plus Jakarta Sans"],
-"headline-lg": ["Plus Jakarta Sans"]
-},
-"fontSize": {
-"body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-"body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-"display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-"headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
-"label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
-"headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
-}
-},
-},
-}
-</script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "surface": "#fbf9f1",
+                        "background": "#fbf9f1",
+                        "on-primary-fixed-variant": "#7a3009",
+                        "primary-fixed-dim": "#ffb597",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f3f1e9",
+                        "outline": "#88726a",
+                        "surface-container-low": "#f5f4ec",
+                        "inverse-primary": "#ffb597",
+                        "tertiary": "#006a63",
+                        "on-primary-fixed": "#360f00",
+                        "surface-variant": "#e4e3db",
+                        "on-secondary-fixed": "#241a00",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#8ef4e9",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "primary-fixed": "#ffdbcd",
+                        "on-background": "#1b1c17",
+                        "outline-variant": "#dbc1b7",
+                        "on-primary-container": "#6c2600",
+                        "on-secondary-container": "#745c00",
+                        "surface-container-highest": "#e4e3db",
+                        "surface-dim": "#dcdad2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#eae8e0",
+                        "primary-container": "#f28c5f",
+                        "secondary-fixed": "#ffe088",
+                        "on-tertiary-container": "#00443f",
+                        "surface-tint": "#98461f",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#fcd664",
+                        "on-surface-variant": "#55433b",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-secondary-fixed-variant": "#574500",
+                        "tertiary-fixed-dim": "#71d7cd",
+                        "tertiary-container": "#4eb7ad",
+                        "on-surface": "#1b1c17",
+                        "surface-container": "#f0eee6",
+                        "surface-bright": "#fbf9f1",
+                        "inverse-surface": "#30312c",
+                        "secondary-fixed-dim": "#e7c353",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "primary": "#98461f",
+                        "secondary": "#735c00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "stack-md": "24px",
+                        "stack-sm": "8px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "stack-lg": "48px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopAppBar -->
@@ -117,36 +116,25 @@ extend: {
 <div class="flex justify-between items-center px-6 md:px-12 py-4 max-w-7xl mx-auto">
 <div class="font-black text-orange-500 dark:text-orange-400 tracking-tighter font-['Plus_Jakarta_Sans'] text-4xl">aukim.lt</div>
 <nav class="hidden md:flex gap-8 items-center">
-  
-  <div class="relative group">
-    <a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-orange-600 dark:text-orange-300 border-b-2 border-orange-500 pb-1 hover:text-teal-500 dark:hover:text-teal-400 hover:scale-105 transition-all inline-block" href="#">Edukacija</a>
-    
-    <div class="absolute top-full left-0 pt-3 w-48 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-in-out z-50">
-      <div class="bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 overflow-hidden">
-        <a href="#" class="block px-4 py-3 font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Vertinimai</a>
-        <a href="#" class="block px-4 py-3 font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Būreliai</a>
-      </div>
-    </div>
-  </div>
-
-  <a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 hover:scale-105 transition-all" href="#">Istorijos</a>
-  
-  <a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 hover:scale-105 transition-all" href="#">Bendruomenė</a>
-  
-  <div class="relative group">
-    <a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 hover:scale-105 transition-all inline-block" href="#">Ką veikti?</a>
-    
-    <div class="absolute top-full left-0 pt-3 w-48 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-in-out z-50">
-      <div class="bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 overflow-hidden">
-        <a href="#" class="block px-4 py-3 font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Renginiai</a>
-        <a href="#" class="block px-4 py-3 font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Parodos</a>
-        <a href="#" class="block px-4 py-3 font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Ką veikti?</a>
-      </div>
-    </div>
-  </div>
-
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-orange-600 dark:text-orange-300 border-b-2 border-orange-500 pb-1 hover:text-teal-500 dark:hover:text-teal-400 transition-all" href="#">Edukacija</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 transition-all" href="#">Istorijos</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 transition-all" href="#">Bendruomenė</a>
+<!-- Dropdown: Renginiai -->
+<!-- Dropdown: Parodos -->
+<!-- Dropdown: Ką veikti? -->
+<div class="relative group">
+<button class="flex items-center gap-1 font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 transition-all py-1">
+        Ką veikti?
+        <span class="material-symbols-outlined text-sm transition-transform group-hover:rotate-180">expand_more</span>
+</button>
+<div class="absolute top-full left-0 mt-2 w-56 glass-card border border-orange-100 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50 overflow-hidden">
+<a class="block px-4 py-3 text-sm text-slate-600 hover:bg-orange-50 hover:text-orange-600 transition-colors" href="#">Renginiai</a>
+<a class="block px-4 py-3 text-sm text-slate-600 hover:bg-orange-50 hover:text-orange-600 transition-colors" href="#">Parodos</a>
+<a class="block px-4 py-3 text-sm text-slate-600 hover:bg-orange-50 hover:text-orange-600 transition-colors" href="#">Ką veikti?</a>
+</div>
+</div>
 </nav>
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md transition-all active:scale-95 hover:shadow-lg hover:shadow-primary/20">Prisijungti</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md transition-all active:scale-95 hover:shadow-lg hover:shadow-primary/20">Pradėti</button>
 </div>
 </header>
 <main class="relative overflow-hidden">
@@ -158,8 +146,8 @@ extend: {
 <section class="max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-32 grid md:grid-cols-2 gap-16 items-center">
 <div class="space-y-stack-md">
 <span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed-variant px-4 py-1.5 rounded-full font-label-md">Ryšio puoselėjimas</span>
-<h1 class="font-display-lg text-display-lg text-on-surface">Vaikams, tėvams, seneliams  <span class="text-primary italic">- viskas šeimai </span></h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Atraskite bendruomenę, skirtą šeimoms, ir mažiems ir dideliems. Švęskime mažas pergales kiekvieną dieną ir kurkime ilgalaikius prisiminimus kiekvienai kartai.</p>
+<h1 class="font-display-lg text-display-lg text-on-surface">Vaikams, tėvams, seneliams - <span class="text-primary italic">viskas šeimai</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Atraskite puoselėjančią ekosistemą, skirtą sinchronizuoti namų ūkio gyvenimą, švęsti mažas pergales ir kurti ilgalaikius prisiminimus kiekvienai kartai.</p>
 <div class="flex flex-wrap gap-4 pt-4">
 <button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline-md flex items-center gap-2 hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-primary/20">Prisijunkite prie šeimos <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span></button>
 <button class="bg-surface-container text-on-surface-variant px-8 py-4 rounded-full font-headline-md hover:bg-surface-container-high transition-all">Žiūrėti istoriją</button>
@@ -168,7 +156,7 @@ extend: {
 <div class="relative group">
 <div class="absolute -inset-4 bg-gradient-to-tr from-primary-container via-secondary-container to-tertiary-container rounded-xl opacity-20 blur-2xl group-hover:opacity-30 transition-opacity"></div>
 <div class="relative rounded-xl overflow-hidden shadow-2xl">
-<img alt="A happy Scandinavian family (mother, father, and two young children) backpacking through a lush, sun-dappled Nordic forest." class="w-full h-auto object-cover aspect-[4/3]" data-alt="A candid, high-quality photograph of a happy Scandinavian family (mother, father, and two young children) backpacking through a lush, sun-dappled Nordic forest. The mother is smiling and engaged with the children. They are wearing modern, stylish outdoor gear in earthy tones. The background features tall pine trees, mossy ground, and soft, natural lighting, creating a warm and adventurous 'hygge' atmosphere. 8k resolution, cinematic lighting, natural colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhPbRl4_0NbD1eQ3hQutzUXTuMpnv-GZVzyq7epQnCNqiSh6q2pdnaRnouVprLTOi8AsmtrmASYTyx6HrD5EpPh1SV_JkBZFmDQOK5rp1JJRDBAzBpQss-ptCOC0Pj0iDBRRFGctD8kBqinrEZZ9M0ggkOnncmYzAskYe3QAO31dv2jfjP24X534CMe3AC1ShhOWc4ilj8BxTuhvH7HYoHeA0kzGx_gyKoPGTbrPOWHxjeeUBAOPH87z561WyaDTJjlqeOzLgh2Dk"/>
+<img alt="Laiminga šeima gamtoje" class="w-full h-auto object-cover aspect-[4/3]" src="https://lh3.googleusercontent.com/aida/ADBb0uhjYk6uxqtoH_4aDe0VMj95_2WPj-d2MIg-oQZasjBLh6pQD4FiqYO65ugdQd9UBoLGc-FXkDlaB4i8slgSM2Q937Ml_7Yy7ACizehampC_L9WuFS41vcvwZRnQm1NDHBE2hJdm7d2TW_ckbBzIWiJjNOBuwtp6f38ltpxKyZMNt2c-dfPhkfkxkLp6_osU2xVnp8GkQlKfzPfJoB91UckRE7WAXuRSP0RPUQA8iZcYh9aGbV_nSKy9vww"/>
 </div>
 </div>
 </section>
@@ -306,7 +294,7 @@ extend: {
 <p class="font-body-md text-on-surface italic">„Galiausiai programėlė, kuri atrodo lyg sukurta tikrų tėvų. Sąsaja džiuginanti ir įnešė tiek daug ramybės į mūsų ryto rutiną.“</p>
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 rounded-full bg-primary-container border-2 border-white shadow-md flex items-center justify-center overflow-hidden">
-<img alt="Avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a woman with a kind, radiant smile. She has warm, olive skin and curly dark hair, lit by soft golden-hour sunlight. The background is a soft-focus greenery, suggesting a nurturing, outdoor setting. The image should feel approachable and cheerful, embodying the nurturing spirit of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByuheY46_MTcm3tC1qJnMi3mrFhfBVpTfGEGyKJLp45no0aqDzjmrmJfm9bTRB7RFlGhWDbXaaMOK-Gf1cqvz96YeyoaOn2tQK1ZMk66oh5VQEXA__geoU4Peow4xTkDIE022AnxU1lPlS_YQpmRV6Be_nURfN30LCZV8guTs36d9o6dogReZZQhPCjh0I1tPjttp8X0unrI703W6wkqKH3vivhNkFBNFjvGB6GHhoNoRpZC3BaEOELifHe3RVsbAMuloVuHSAp18"/>
+<img alt="Sarah Jenkins" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByuheY46_MTcm3tC1qJnMi3mrFhfBVpTfGEGyKJLp45no0aqDzjmrmJfm9bTRB7RFlGhWDbXaaMOK-Gf1cqvz96YeyoaOn2tQK1ZMk66oh5VQEXA__geoU4Peow4xTkDIE022AnxU1lPlS_YQpmRV6Be_nURfN30LCZV8guTs36d9o6dogReZZQhPCjh0I1tPjttp8X0unrI703W6wkqKH3vivhNkFBNFjvGB6GHhoNoRpZC3BaEOELifHe3RVsbAMuloVuHSAp18"/>
 </div>
 <div>
 <p class="font-label-md">Sarah Jenkins</p>
@@ -326,7 +314,7 @@ extend: {
 <p class="font-body-md text-on-surface italic">„Palaikymo rato funkcija keičia viską. Patikimą auklę radau per kelias valandas. Visiška ramybė mūsų pasimatymų vakarui!“</p>
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 rounded-full bg-tertiary-container border-2 border-white shadow-md flex items-center justify-center overflow-hidden">
-<img alt="Avatar" class="w-full h-full object-cover" data-alt="Portrait of a father in his early 40s with a warm, sincere expression. He has short hair and a clean-shaven face, dressed in a soft blue linen shirt. The lighting is bright and airy, with a soft cream background that aligns with the light-mode UI style. He looks confident and relaxed, reflecting the reliability and joy of the family platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzbas5wmx-msfEf_RijZz3hlfWLzbOkkQ497pxamdv2pq_nTrlOSQSNVmKp7arQx8qWs4DkSfFBqXDHGe-HqXJLCfGMv43UU0NLuOZV4XjfM1xotCSiguSzjvkNsgCdXrxM4mV4bJZyw6hUATgoEjUz4epNjDGyeB23RZ1Fkt2Reu4H3a-S6Ir0R8WvhUhILtL7fDhrCevpWNbrIBfuvO6rZl3Oud8TbGoKGFGpsvXWqVPbGBbpLrmQzQo7skAXRHRFCzAft1GS7g"/>
+<img alt="David Chen" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzbas5wmx-msfEf_RijZz3hlfWLzbOkkQ497pxamdv2pq_nTrlOSQSNVmKp7arQx8qWs4DkSfFBqXDHGe-HqXJLCfGMv43UU0NLuOZV4XjfM1xotCSiguSzjvkNsgCdXrxM4mV4bJZyw6hUATgoEjUz4epNjDGyeB23RZ1Fkt2Reu4H3a-S6Ir0R8WvhUhILtL7fDhrCevpWNbrIBfuvO6rZl3Oud8TbGoKGFGpsvXWqVPbGBbpLrmQzQo7skAXRHRFCzAft1GS7g"/>
 </div>
 <div>
 <p class="font-label-md">David Chen</p>
@@ -346,7 +334,7 @@ extend: {
 <p class="font-body-md text-on-surface italic">„Man patinka, kokia įtraukianti ši platforma. Ji su didžiausia malone ir spalvingu paprastumu susitvarko su mūsų sudėtinga šeimos dinamika.“</p>
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 rounded-full bg-secondary-container border-2 border-white shadow-md flex items-center justify-center overflow-hidden">
-<img alt="Avatar" class="w-full h-full object-cover" data-alt="A smiling, confident young professional woman with natural hair and bright, expressive eyes. She is wearing a mustard yellow top that complements the secondary color palette. The lighting is warm and diffuse, creating a welcoming, friendly atmosphere. The visual style is modern, vibrant, and celebrates diversity and inclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfrG-Es3ioT2fpmImf6S57EK2j9Kk0itB2aOpxx2dzwB7PdNE94MV_Nta1XxEaEi2bs4WxYiS9L90tkJwJXorp6c85D8d7TX8LEiUlyqBFY8HvHqvD4vt9_xhI84V7xi-q0cogtOiEFalVBiHUSlH8lB4ZucOCXqqPyw4vE4IhqeLpC4b8whnk5KjnEHt6BAbQr2znB6YKIqFbYWfzWTA4ujZGDWVVOQ1cxctlEcYaIm0829vH4eetly5JQxYEn7P8YND3yTWtvns"/>
+<img alt="Amara Okafor" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfrG-Es3ioT2fpmImf6S57EK2j9Kk0itB2aOpxx2dzwB7PdNE94MV_Nta1XxEaEi2bs4WxYiS9L90tkJwJXorp6c85D8d7TX8LEiUlyqBFY8HvHqvD4vt9_xhI84V7xi-q0cogtOiEFalVBiHUSlH8lB4ZucOCXqqPyw4vE4IhqeLpC4b8whnk5KjnEHt6BAbQr2znB6YKIqFbYWfzWTA4ujZGDWVVOQ1cxctlEcYaIm0829vH4eetly5JQxYEn7P8YND3yTWtvns"/>
 </div>
 <div>
 <p class="font-label-md">Amara Okafor</p>
@@ -387,14 +375,14 @@ extend: {
 </ul>
 </div>
 <div>
-<h5 class="font-headline-md text-sm mb-6 text-teal-600 dark:text-teal-400">Kontaktai</h5>
+<h5 class="font-headline-md text-sm mb-6 text-teal-600 dark:text-teal-400">Teisinė informacija</h5>
 <ul class="space-y-4">
 <li><a class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-400 underline decoration-2 underline-offset-4 transition-colors duration-300" href="#">Privatumo politika</a></li>
 <li><a class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-400 underline decoration-2 underline-offset-4 transition-colors duration-300" href="#">Paslaugų teikimo sąlygos</a></li>
 </ul>
 </div>
 <div>
-<h5 class="font-headline-md text-sm mb-6 text-teal-600 dark:text-teal-400">Kontaktai</h5>
+<h5 class="font-headline-md text-sm mb-6 text-teal-600 dark:text-teal-400">Pagalba</h5>
 <ul class="space-y-4">
 <li><a class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-400 underline decoration-2 underline-offset-4 transition-colors duration-300" href="#">Pagalbos centras</a></li>
 <li><a class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-400 underline decoration-2 underline-offset-4 transition-colors duration-300" href="#">Partnerystė</a></li>
