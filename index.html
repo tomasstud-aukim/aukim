@@ -1,470 +1,389 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aukim.lt | Helping Your Family Flourish</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --mint: #A7D7C5;
-            --coral: #FF8B8B;
-            --yellow: #FFD93D;
-            --bg-cream: #FDFBF7;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --white: #ffffff;
-            --radius: 20px;
-            --transition: all 0.3s ease;
-        }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-cream);
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 800;
-            color: var(--text-dark);
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--mint);
-            color: var(--text-dark);
-        }
-
-        .btn-primary:hover {
-            background-color: #92c4b1;
-            transform: translateY(-2px);
-        }
-
-        .btn-cta {
-            background-color: var(--coral);
-            color: white;
-        }
-
-        .btn-cta:hover {
-            background-color: #ff7575;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 139, 139, 0.3);
-        }
-
-        /* Header */
-        header {
-            padding: 20px 0;
-            background: var(--bg-cream);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            color: var(--mint);
-            font-family: 'Nunito', sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-links {
-            display: none; /* Mobile first */
-            gap: 30px;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 60px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-image {
-            width: 100%;
-            max-width: 800px;
-            margin-top: 40px;
-            border-radius: var(--radius);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        /* Sections General */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        /* Benefits Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: var(--radius);
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card i {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--mint);
-        }
-
-        /* How it Works */
-        .steps {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            text-align: center;
-        }
-
-        .step-item i {
-            font-size: 2rem;
-            color: var(--yellow);
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        /* Testimonials */
-        .testimonial-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: var(--radius);
-            position: relative;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-
-        .testimonial-user {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 20px;
-            font-style: normal;
-        }
-
-        .testimonial-user img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        /* Trust Section */
-        .trust-banner {
-            background-color: var(--mint);
-            color: var(--text-dark);
-            text-align: center;
-            border-radius: var(--radius);
-            padding: 40px;
-        }
-
-        .badges {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .badge {
-            background: rgba(255,255,255,0.4);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            padding: 60px 0 20px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-links h4 {
-            margin-bottom: 20px;
-            color: var(--mint);
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            font-size: 1.5rem;
-        }
-
-        .copyright {
-            text-align: center;
-            border-top: 1px solid #444;
-            padding-top: 20px;
-            font-size: 0.8rem;
-            opacity: 0.6;
-        }
-
-        /* Responsive Desktop */
-        @media (min-width: 768px) {
-            .nav-links { display: flex; }
-            .grid { grid-template-columns: repeat(2, 1fr); }
-            .steps { flex-direction: row; justify-content: space-between; }
-            .step-item { flex: 1; }
-            .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
-            .hero-content h1 { font-size: 3.5rem; }
-        }
-
-        @media (min-width: 1024px) {
-            .grid { grid-template-columns: repeat(4, 1fr); }
-        }
-    </style>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>aukim.lt | Padėkite šeimoms pražysti su didžiausiu džiaugsmu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+.kaleidoscope-shape {
+filter: blur(60px);
+opacity: 0.15;
+position: absolute;
+z-index: -1;
+}
+.glass-card {
+background: rgba(255, 255, 255, 0.7);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+}
+</style>
+<script id="tailwind-config">
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+"colors": {
+"on-error-container": "#93000a",
+"surface": "#fbf9f1",
+"background": "#fbf9f1",
+"on-primary-fixed-variant": "#7a3009",
+"primary-fixed-dim": "#ffb597",
+"error-container": "#ffdad6",
+"inverse-on-surface": "#f3f1e9",
+"outline": "#88726a",
+"surface-container-low": "#f5f4ec",
+"inverse-primary": "#ffb597",
+"tertiary": "#006a63",
+"on-primary-fixed": "#360f00",
+"surface-variant": "#e4e3db",
+"on-secondary-fixed": "#241a00",
+"on-primary": "#ffffff",
+"tertiary-fixed": "#8ef4e9",
+"on-tertiary-fixed-variant": "#00504a",
+"primary-fixed": "#ffdbcd",
+"on-background": "#1b1c17",
+"outline-variant": "#dbc1b7",
+"on-primary-container": "#6c2600",
+"on-secondary-container": "#745c00",
+"surface-container-highest": "#e4e3db",
+"surface-dim": "#dcdad2",
+"surface-container-lowest": "#ffffff",
+"on-error": "#ffffff",
+"surface-container-high": "#eae8e0",
+"primary-container": "#f28c5f",
+"secondary-fixed": "#ffe088",
+"on-tertiary-container": "#00443f",
+"surface-tint": "#98461f",
+"on-secondary": "#ffffff",
+"secondary-container": "#fcd664",
+"on-surface-variant": "#55433b",
+"on-tertiary-fixed": "#00201d",
+"on-secondary-fixed-variant": "#574500",
+"tertiary-fixed-dim": "#71d7cd",
+"tertiary-container": "#4eb7ad",
+"on-surface": "#1b1c17",
+"surface-container": "#f0eee6",
+"surface-bright": "#fbf9f1",
+"inverse-surface": "#30312c",
+"secondary-fixed-dim": "#e7c353",
+"on-tertiary": "#ffffff",
+"error": "#ba1a1a",
+"primary": "#98461f",
+"secondary": "#735c00"
+},
+"borderRadius": {
+"DEFAULT": "1rem",
+"lg": "2rem",
+"xl": "3rem",
+"full": "9999px"
+},
+"spacing": {
+"margin-mobile": "16px",
+"stack-md": "24px",
+"stack-sm": "8px",
+"unit": "8px",
+"container-max": "1280px",
+"stack-lg": "48px",
+"gutter": "24px"
+},
+"fontFamily": {
+"body-lg": ["Plus Jakarta Sans"],
+"body-md": ["Plus Jakarta Sans"],
+"display-lg": ["Plus Jakarta Sans"],
+"headline-md": ["Plus Jakarta Sans"],
+"label-md": ["Plus Jakarta Sans"],
+"headline-lg": ["Plus Jakarta Sans"]
+},
+"fontSize": {
+"body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+"body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+"display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+"headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+"label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+"headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+}
+},
+},
+}
+</script>
 </head>
-<body>
-
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">
-                    <i class="fas fa-heart"></i> Aukim.lt
-                </a>
-                <ul class="nav-links">
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#activities">Activities</a></li>
-                    <li><a href="#community">Community</a></li>
-                </ul>
-                <a href="#" class="btn btn-primary">Sign Up Free</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero container">
-            <div class="hero-content">
-                <h1>Helping Your Family Thrive,<br>Every Step of the Way.</h1>
-                <p>Discover expert-backed parenting resources, fun daily activities, and a welcoming village of parents for kids aged 0–12.</p>
-                <a href="#" class="btn btn-cta">Join Our Community</a>
-            </div>
-            <img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Family playing together" class="hero-image">
-        </section>
-
-        <section class="container" id="resources">
-            <div class="section-title">
-                <h2>Everything You Need</h2>
-                <p>Curated by experts, loved by parents.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <i class="fas fa-puzzle-piece"></i>
-                    <h3>Daily Activities</h3>
-                    <p>Screen-free crafts and games sorted by age and interest.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-book-open"></i>
-                    <h3>Expert Guides</h3>
-                    <p>Vetted advice on sleep, nutrition, and development.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-users"></i>
-                    <h3>Safe Community</h3>
-                    <p>A private space to connect with other parents nearby.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Trust & Safety</h3>
-                    <p>100% ad-free and COPPA compliant environment.</p>
-                </div>
-            </div>
-        </section>
-
-        <section style="background-color: #fff9e6;">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Getting Started is Easy</h2>
-                </div>
-                <div class="steps">
-                    <div class="step-item">
-                        <i class="fas fa-user-circle"></i>
-                        <h3>Create Profile</h3>
-                        <p>Tell us your kids' ages for a tailored feed.</p>
-                    </div>
-                    <div class="step-item">
-                        <i class="fas fa-search"></i>
-                        <h3>Explore</h3>
-                        <p>Find resources that fit your family's lifestyle.</p>
-                    </div>
-                    <div class="step-item">
-                        <i class="fas fa-star"></i>
-                        <h3>Grow</h3>
-                        <p>Save favorites and track milestones together.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container">
-            <div class="section-title">
-                <h2>Loved by Families</h2>
-            </div>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                <div class="testimonial-card">
-                    <p>"This site is an absolute lifesaver. The rainy-day activity guides keep my 4-year-old busy for hours!"</p>
-                    <div class="testimonial-user">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah">
-                        <strong>Sarah M., Mom of two</strong>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p>"I finally found a place where the advice is actually backed by pediatricians. No more 'mom-guilt'!"</p>
-                    <div class="testimonial-user">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="David">
-                        <strong>David T., Dad of one</strong>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container">
-            <div class="trust-banner">
-                <h2>Your Privacy is Our Priority</h2>
-                <p>We use industry-leading security to ensure your family's data stays yours.</p>
-                <div class="badges">
-                    <span class="badge"><i class="fas fa-check-circle"></i> Ad-Free</span>
-                    <span class="badge"><i class="fas fa-check-circle"></i> COPPA Compliant</span>
-                    <span class="badge"><i class="fas fa-check-circle"></i> Expert Reviewed</span>
-                </div>
-            </div>
-        </section>
-
-        <section style="text-align: center; padding: 100px 0;">
-            <div class="container">
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Thrive?</h2>
-                <p style="margin-bottom: 30px; font-size: 1.2rem; color: var(--text-light);">Join 10,000+ families today.</p>
-                <a href="#" class="btn btn-cta">Get Started for Free</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <a href="#" class="logo" style="color: var(--mint); margin-bottom: 20px;">
-                        <i class="fas fa-heart"></i> FamilyThrive
-                    </a>
-                    <p style="opacity: 0.7; margin-top: 15px;">Making parenting a little bit easier and a lot more fun, every single day.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Expert Board</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Follow Our Journey</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2026 aukim.lt All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+<body class="bg-background text-on-background font-body-md min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-orange-100 dark:border-slate-800 shadow-[0_4px_20px_rgba(242,140,95,0.05)]">
+<div class="flex justify-between items-center px-6 md:px-12 py-4 max-w-7xl mx-auto">
+<div class="font-black text-orange-500 dark:text-orange-400 tracking-tighter font-['Plus_Jakarta_Sans'] text-4xl">aukim.lt</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-orange-600 dark:text-orange-300 border-b-2 border-orange-500 pb-1 hover:text-teal-500 dark:hover:text-teal-400 hover:scale-105 transition-all" href="#">Funkcijos</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 hover:scale-105 transition-all" href="#">Istorijos</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 hover:scale-105 transition-all" href="#">Bendruomenė</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-bold tracking-tight text-slate-600 dark:text-slate-400 hover:text-teal-500 dark:hover:text-teal-400 hover:scale-105 transition-all" href="#">Kainos</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md transition-all active:scale-95 hover:shadow-lg hover:shadow-primary/20">Pradėti</button>
+</div>
+</header>
+<main class="relative overflow-hidden">
+<!-- Kaleidoscope Background Elements -->
+<div class="kaleidoscope-shape top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-primary-container"></div>
+<div class="kaleidoscope-shape top-[20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-secondary-container"></div>
+<div class="kaleidoscope-shape bottom-[10%] left-[10%] w-[400px] h-[400px] rounded-full bg-tertiary-container"></div>
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-32 grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-stack-md">
+<span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed-variant px-4 py-1.5 rounded-full font-label-md">Ryšio puoselėjimas</span>
+<h1 class="font-display-lg text-display-lg text-on-surface">Padėkite šeimoms pražysti su <span class="text-primary italic">didžiausiu džiaugsmu</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Atraskite puoselėjančią ekosistemą, skirtą sinchronizuoti namų ūkio gyvenimą, švęsti mažas pergales ir kurti ilgalaikius prisiminimus kiekvienai kartai.</p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline-md flex items-center gap-2 hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-primary/20">Prisijunkite prie šeimos <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span></button>
+<button class="bg-surface-container text-on-surface-variant px-8 py-4 rounded-full font-headline-md hover:bg-surface-container-high transition-all">Žiūrėti istoriją</button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-gradient-to-tr from-primary-container via-secondary-container to-tertiary-container rounded-xl opacity-20 blur-2xl group-hover:opacity-30 transition-opacity"></div>
+<div class="relative rounded-xl overflow-hidden shadow-2xl">
+<img alt="A happy Scandinavian family (mother, father, and two young children) backpacking through a lush, sun-dappled Nordic forest." class="w-full h-auto object-cover aspect-[4/3]" data-alt="A candid, high-quality photograph of a happy Scandinavian family (mother, father, and two young children) backpacking through a lush, sun-dappled Nordic forest. The mother is smiling and engaged with the children. They are wearing modern, stylish outdoor gear in earthy tones. The background features tall pine trees, mossy ground, and soft, natural lighting, creating a warm and adventurous 'hygge' atmosphere. 8k resolution, cinematic lighting, natural colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhPbRl4_0NbD1eQ3hQutzUXTuMpnv-GZVzyq7epQnCNqiSh6q2pdnaRnouVprLTOi8AsmtrmASYTyx6HrD5EpPh1SV_JkBZFmDQOK5rp1JJRDBAzBpQss-ptCOC0Pj0iDBRRFGctD8kBqinrEZZ9M0ggkOnncmYzAskYe3QAO31dv2jfjP24X534CMe3AC1ShhOWc4ilj8BxTuhvH7HYoHeA0kzGx_gyKoPGTbrPOWHxjeeUBAOPH87z561WyaDTJjlqeOzLgh2Dk"/>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-24">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Įrankiai kiekvienai mažai širdutei</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto font-body-md">Mūsų platforma siūlo intuityvius sprendimus spalvingiems šiuolaikinio namų ūkio valdymo iššūkiams.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 bg-white p-12 rounded-lg border-2 border-primary-container shadow-sm hover:shadow-xl transition-all duration-300 group">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="w-16 h-16 rounded-2xl bg-primary-fixed flex items-center justify-center shrink-0 group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="calendar_month">calendar_month</span>
+</div>
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Džiaugsmingas planuoklis</h3>
+<p class="text-on-surface-variant font-body-md">Koordinuokite futbolo treniruotes, šeimos vakarienes ir apsilankymus pas gydytojus naudodami ryškų bendrą kalendorių, kuris namų ruošos darbus paverčia švente.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 bg-white p-10 rounded-lg border-2 border-secondary-container shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="space-y-6">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="temp_preferences_custom">temp_preferences_custom</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Šeimos pasiekimai</h3>
+<p class="text-on-surface-variant font-body-md text-sm">Įamžinkite kiekvieną „pirmąjį kartą“ naudodami saugius nuotraukų žurnalus ir bendrus skaitmeninius albumus.</p>
+</div>
+</div>
+<div class="md:col-span-4 bg-white p-10 rounded-lg border-2 border-tertiary-container shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="space-y-6">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-2xl" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Palaikymo ratas</h3>
+<p class="text-on-surface-variant font-body-md text-sm">Susisiekite su vietiniais priežiūros paslaugų teikėjais ir patikrintomis auklėmis savo patikimoje bendruomenėje.</p>
+</div>
+</div>
+<div class="md:col-span-8 bg-on-tertiary-container p-10 rounded-lg shadow-sm overflow-hidden relative group">
+<div class="relative z-10 text-white space-y-4">
+<h3 class="font-headline-lg text-headline-lg">Dinamiškas išteklių centras</h3>
+<p class="font-body-md opacity-90 max-w-md">Pasiekite ekspertų parengtus tėvystės vadovus, maitinimo planus ir namų saugos patarimus, kasdien atnaujinamus pagal jūsų šeimos poreikius.</p>
+<button class="text-tertiary-fixed font-label-md flex items-center gap-2 group-hover:gap-4 transition-all">Naršyti išteklius <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+<div class="absolute -right-10 -bottom-10 w-64 h-64 bg-tertiary opacity-20 rounded-full blur-3xl group-hover:scale-110 transition-transform"></div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="bg-surface-container py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
+<div class="max-w-xl">
+<h2 class="font-display-lg text-display-lg text-on-surface mb-6">Augimo puoselėjimas trimis žingsniais</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Supaprastinome kelią į šeimos harmoniją, kad tai būtų taip paprasta, kaip pasodinti sėklą ir stebėti, kaip ji pražysta.</p>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-primary text-8xl opacity-10" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-12 relative">
+<!-- Step 1 -->
+<div class="relative group">
+<div class="absolute -top-6 -left-6 text-8xl font-black text-primary opacity-5 select-none">01</div>
+<div class="bg-white p-8 rounded-lg border-t-8 border-primary-container relative z-10 transition-transform hover:-translate-y-2">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Pasodinkite sėklą</h4>
+<p class="text-on-surface-variant font-body-md">Sukurkite savo šeimos profilį ir pakvieskite narius. Pritaikykite savo „Kaleidoskopo skydelį“ naudodami unikalias savo namų ūkio spalvas.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative group translate-y-8">
+<div class="absolute -top-6 -left-6 text-8xl font-black text-secondary opacity-5 select-none">02</div>
+<div class="bg-white p-8 rounded-lg border-t-8 border-secondary-container relative z-10 transition-transform hover:-translate-y-2">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Laistykite sodą</h4>
+<p class="text-on-surface-variant font-body-md">Sinchronizuokite tvarkaraščius ir pradėkite bendrus sąrašus. Stebėkite, kaip automatizacija sutvarko logistiką, kad galėtumėte susikoncentruoti į malonumus.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative group translate-y-16">
+<div class="absolute -top-6 -left-6 text-8xl font-black text-tertiary opacity-5 select-none">03</div>
+<div class="bg-white p-8 rounded-lg border-t-8 border-tertiary-container relative z-10 transition-transform hover:-translate-y-2">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-4">Stebėkite, kaip pražysta</h4>
+<p class="text-on-surface-variant font-body-md">Švęskite pasiekimus ir mėgaukitės ramesniais namais. Jūsų šeima klesti kartu su didžiausiu, tyru džiaugsmu.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Safety First -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-32">
+<div class="bg-on-primary-fixed p-12 md:p-24 rounded-xl relative overflow-hidden flex flex-col md:flex-row gap-16 items-center">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-primary opacity-5 -skew-x-12 translate-x-20"></div>
+<div class="relative z-10 space-y-6 flex-1">
+<div class="inline-flex items-center gap-2 bg-primary/20 text-primary-fixed px-4 py-1 rounded-full border border-primary/30">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+<span class="font-label-md">Optimistinis saugumas</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-white">Privatumas yra mūsų pagrindas</h2>
+<p class="text-primary-fixed font-body-lg max-w-lg">Kiekvienas bendrinamas prisiminimas ir kiekvienas tvarkaraščio sinchronizavimas yra apsaugotas karinio lygio šifravimu. Mes rūpinamės jūsų šeimos duomenimis taip pat, kaip jūs rūpinatės savo artimaisiais.</p>
+<ul class="space-y-4 text-white/90 font-body-md">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span> Galutinis šifravimas visai šeimos medijai</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span> Nulinės šalies duomenų politika (niekada neparduodame jūsų informacijos)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container" data-icon="check_circle">check_circle</span> GDPR ir COPPA atitinkanti skaitmeninė aplinka</li>
+</ul>
+</div>
+<div class="relative z-10 flex-1 w-full max-w-md">
+<div class="bg-white/10 backdrop-blur-md p-8 rounded-lg border border-white/20 shadow-2xl">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-primary-container"></div>
+<div class="h-4 w-32 bg-white/20 rounded"></div>
+</div>
+<div class="space-y-4">
+<div class="h-3 w-full bg-white/10 rounded"></div>
+<div class="h-3 w-4/5 bg-white/10 rounded"></div>
+<div class="h-10 w-full bg-primary rounded-full mt-6 opacity-80"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 max-w-7xl mx-auto px-6 md:px-12">
+<h2 class="font-headline-lg text-headline-lg text-center mb-16">Istorijos iš sodo</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="glass-card p-10 rounded-lg shadow-sm border border-white/50 space-y-6">
+<div class="flex gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="font-body-md text-on-surface italic">„Galiausiai programėlė, kuri atrodo lyg sukurta tikrų tėvų. Sąsaja džiuginanti ir įnešė tiek daug ramybės į mūsų ryto rutiną.“</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container border-2 border-white shadow-md flex items-center justify-center overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a woman with a kind, radiant smile. She has warm, olive skin and curly dark hair, lit by soft golden-hour sunlight. The background is a soft-focus greenery, suggesting a nurturing, outdoor setting. The image should feel approachable and cheerful, embodying the nurturing spirit of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByuheY46_MTcm3tC1qJnMi3mrFhfBVpTfGEGyKJLp45no0aqDzjmrmJfm9bTRB7RFlGhWDbXaaMOK-Gf1cqvz96YeyoaOn2tQK1ZMk66oh5VQEXA__geoU4Peow4xTkDIE022AnxU1lPlS_YQpmRV6Be_nURfN30LCZV8guTs36d9o6dogReZZQhPCjh0I1tPjttp8X0unrI703W6wkqKH3vivhNkFBNFjvGB6GHhoNoRpZC3BaEOELifHe3RVsbAMuloVuHSAp18"/>
+</div>
+<div>
+<p class="font-label-md">Sarah Jenkins</p>
+<p class="text-xs text-on-surface-variant">Trijų vaikų mama</p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card p-10 rounded-lg shadow-sm border border-white/50 space-y-6 translate-y-4">
+<div class="flex gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="font-body-md text-on-surface italic">„Palaikymo rato funkcija keičia viską. Patikimą auklę radau per kelias valandas. Visiška ramybė mūsų pasimatymų vakarui!“</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-container border-2 border-white shadow-md flex items-center justify-center overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="Portrait of a father in his early 40s with a warm, sincere expression. He has short hair and a clean-shaven face, dressed in a soft blue linen shirt. The lighting is bright and airy, with a soft cream background that aligns with the light-mode UI style. He looks confident and relaxed, reflecting the reliability and joy of the family platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzbas5wmx-msfEf_RijZz3hlfWLzbOkkQ497pxamdv2pq_nTrlOSQSNVmKp7arQx8qWs4DkSfFBqXDHGe-HqXJLCfGMv43UU0NLuOZV4XjfM1xotCSiguSzjvkNsgCdXrxM4mV4bJZyw6hUATgoEjUz4epNjDGyeB23RZ1Fkt2Reu4H3a-S6Ir0R8WvhUhILtL7fDhrCevpWNbrIBfuvO6rZl3Oud8TbGoKGFGpsvXWqVPbGBbpLrmQzQo7skAXRHRFCzAft1GS7g"/>
+</div>
+<div>
+<p class="font-label-md">David Chen</p>
+<p class="text-xs text-on-surface-variant">Šiuolaikiškas tėtis</p>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card p-10 rounded-lg shadow-sm border border-white/50 space-y-6">
+<div class="flex gap-1 text-secondary">
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-icon="star" data-weight="fill">star</span>
+</div>
+<p class="font-body-md text-on-surface italic">„Man patinka, kokia įtraukianti ši platforma. Ji su didžiausia malone ir spalvingu paprastumu susitvarko su mūsų sudėtinga šeimos dinamika.“</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container border-2 border-white shadow-md flex items-center justify-center overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A smiling, confident young professional woman with natural hair and bright, expressive eyes. She is wearing a mustard yellow top that complements the secondary color palette. The lighting is warm and diffuse, creating a welcoming, friendly atmosphere. The visual style is modern, vibrant, and celebrates diversity and inclusivity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfrG-Es3ioT2fpmImf6S57EK2j9Kk0itB2aOpxx2dzwB7PdNE94MV_Nta1XxEaEi2bs4WxYiS9L90tkJwJXorp6c85D8d7TX8LEiUlyqBFY8HvHqvD4vt9_xhI84V7xi-q0cogtOiEFalVBiHUSlH8lB4ZucOCXqqPyw4vE4IhqeLpC4b8whnk5KjnEHt6BAbQr2znB6YKIqFbYWfzWTA4ujZGDWVVOQ1cxctlEcYaIm0829vH4eetly5JQxYEn7P8YND3yTWtvns"/>
+</div>
+<div>
+<p class="font-label-md">Amara Okafor</p>
+<p class="text-xs text-on-surface-variant">Šeimos koordinatorė</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-32 text-center">
+<div class="relative py-24 px-12 rounded-xl bg-gradient-to-br from-primary via-primary-container to-secondary-container text-white overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+<div class="relative z-10 max-w-2xl mx-auto space-y-8">
+<h2 class="font-display-lg text-display-lg">Pasiruošę pamatyti savo šeimą pražystant?</h2>
+<p class="font-body-lg opacity-90">Prisijunkite prie 50 000+ laimingų namų ūkių, puoselėjančių didžiausią džiaugsmą jau šiandien. Pirmosios 30 dienų nemokamai.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-white text-primary px-10 py-4 rounded-full font-headline-md hover:scale-105 transition-all shadow-xl">Pradėti nemokamai</button>
+<button class="bg-primary/20 backdrop-blur-md border border-white/30 text-white px-10 py-4 rounded-full font-headline-md hover:bg-white/10 transition-all">Užsisakyti demonstraciją</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[48px] mt-12 bg-orange-50 dark:bg-slate-900 border-t border-orange-100 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-8 pt-16 pb-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<span class="font-extrabold text-orange-500 dark:text-orange-400 block font-['Plus_Jakarta_Sans'] text-4xl mb-6">aukim.lt</span>
+<p class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400">Puoselėjame kiekvieno namų ūkio širdį naudodami šiuolaikinius įrankius ir senovės išmintį.</p>
+</div>
+<div>
+<h5 class="font-headline-md text-sm mb-6 text-teal-600 dark:text-teal-400">Kontaktai</h5>
+<ul class="space-y-4">
+<li><a class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-400 underline decoration-2 underline-offset-4 transition-colors duration-300" href="#">Apie mus</a></li>
+<li><a class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-400 underline decoration-2 underline-offset-4 transition-colors duration-300" href="#">Saugos centras</a></li>
+<li><a class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-400 underline decoration-2 underline-offset-4 transition-colors duration-300" href="#">Karjera</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline-md text-sm mb-6 text-teal-600 dark:text-teal-400">Kontaktai</h5>
+<ul class="space-y-4">
+<li><a class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-400 underline decoration-2 underline-offset-4 transition-colors duration-300" href="#">Privatumo politika</a></li>
+<li><a class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-400 underline decoration-2 underline-offset-4 transition-colors duration-300" href="#">Paslaugų teikimo sąlygos</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline-md text-sm mb-6 text-teal-600 dark:text-teal-400">Kontaktai</h5>
+<ul class="space-y-4">
+<li><a class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-400 underline decoration-2 underline-offset-4 transition-colors duration-300" href="#">Pagalbos centras</a></li>
+<li><a class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 hover:text-orange-500 dark:hover:text-orange-400 underline decoration-2 underline-offset-4 transition-colors duration-300" href="#">Partnerystė</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-orange-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-['Plus_Jakarta_Sans'] text-sm leading-relaxed text-slate-500 dark:text-slate-400">© 2024 aukim.lt. Džiaugsmingai puoselėjame kiekvienos šeimos kelionę.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-teal-600 cursor-pointer" data-icon="facebook">social_leaderboard</span>
+<span class="material-symbols-outlined text-teal-600 cursor-pointer" data-icon="camera">camera</span>
+<span class="material-symbols-outlined text-teal-600 cursor-pointer" data-icon="share">share</span>
+</div>
+</div>
+</footer>
+</body></html>
